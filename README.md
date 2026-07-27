@@ -1,20 +1,15 @@
 # Kwame Nkrumah Memorial Explorer
 
-An interactive 3D web explorer for reconstructed objects from the Kwame Nkrumah Memorial Museum. The project places Gaussian-splat `.ply` reconstructions into one shared virtual memorial scene, lets visitors click/tap objects for historical context, and supports open text queries that zoom to the closest matching item.
+An interactive 3D web explorer for reconstructed objects from the Kwame Nkrumah Memorial Museum. The `.ply` assets were reconstructed with SAM3D, then placed into one shared virtual memorial scene where visitors can click/tap objects for historical context and use open text queries to zoom to the closest matching item.
 
 ## Screenshot
 
-Add your screenshot here:
-
-```md
 ![Kwame Nkrumah Memorial Explorer](screenshots/explorer.png)
-```
-
-Create a `screenshots/` folder, save your image as `explorer.png`, then uncomment or paste the Markdown image line above into this section.
 
 ## Features
 
 - Shared 3D museum scene with multiple reconstructed objects.
+- SAM3D-generated `.ply` reconstruction assets.
 - Gaussian splat rendering for `.ply` reconstructions using Spark and Three.js.
 - Click/tap object selection with smooth camera zoom.
 - Overview mode to return to the full memorial scene.
@@ -37,6 +32,7 @@ Create a `screenshots/` folder, save your image as `explorer.png`, then uncommen
 - HTML, CSS, JavaScript
 - Three.js
 - Spark Gaussian splat renderer
+- SAM3D reconstruction outputs
 - Transformers.js
 - SigLIP zero-shot image-text matching
 
@@ -117,7 +113,7 @@ For GitHub Pages:
 
 ## Notes
 
-The `.ply` files are Gaussian-splat reconstructions, not ordinary mesh models. The app renders them with a Gaussian splat renderer rather than a standard mesh loader.
+The `.ply` files were generated with SAM3D as Gaussian-splat reconstruction outputs, not ordinary mesh models. The app renders them with a Gaussian splat renderer rather than a standard mesh loader.
 
 If a `.ply` file is too large for GitHub, use Git LFS:
 
@@ -130,6 +126,8 @@ git commit -m "Track PLY reconstructions with Git LFS"
 ```
 
 ## Credits
+
+- 3D reconstruction assets generated with SAM3D.
 
 Historical descriptions are based on public information from:
 
