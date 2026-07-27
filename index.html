@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kwame Nkrumah Memorial Explorer</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+          "@sparkjsdev/spark": "https://sparkjs.dev/releases/spark/2.1.0/spark.module.js",
+          "@xenova/transformers": "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="app">
+      <section class="scene-shell" aria-label="Interactive memorial scene">
+        <div id="scene" class="scene"></div>
+        <div id="labels" class="labels" aria-hidden="true"></div>
+
+        <header class="hud top-hud">
+          <div>
+            <h1>Kwame Nkrumah Memorial Explorer</h1>
+            <p>Explore reconstructed statues and museum items in one shared 3D scene.</p>
+          </div>
+          <div class="status" id="status">Loading memorial scene...</div>
+        </header>
+
+        <section class="hud query-hud" aria-label="Open query search">
+          <label for="query">Open query</label>
+          <div class="query-row">
+            <input
+              id="query"
+              type="text"
+              autocomplete="off"
+              placeholder="Find the piano, chair, bust, monument, statue..."
+            />
+            <button id="queryButton" type="button">Search</button>
+          </div>
+          <div class="meter" aria-hidden="true">
+            <span id="modelProgress"></span>
+          </div>
+        </section>
+
+        <section class="hud tour-hud" aria-label="Museum objects">
+          <button type="button" id="overviewButton">Overview</button>
+          <button type="button" data-focus="0">Seated Statue</button>
+          <button type="button" data-focus="1">Piano</button>
+          <button type="button" data-focus="2">Bust</button>
+          <button type="button" data-focus="3">Chair</button>
+          <button type="button" data-focus="4">Standing Statue</button>
+          <button type="button" data-focus="5">Monument</button>
+          <button type="button" data-focus="6">Headless Statue</button>
+        </section>
+
+        <aside class="info-panel" id="infoPanel" aria-live="polite">
+          <button class="close-button" id="closeInfo" type="button" aria-label="Close object details">x</button>
+          <p class="eyebrow">Selected Reconstruction</p>
+          <h2 id="infoTitle">Tap an object</h2>
+          <p id="infoDescription">
+            Touch any statue or item in the scene to identify it and focus the camera.
+          </p>
+          <dl>
+            <div>
+              <dt>File</dt>
+              <dd id="infoFile">-</dd>
+            </div>
+            <div>
+              <dt>Query score</dt>
+              <dd id="infoScore">Not queried</dd>
+            </div>
+            <div>
+              <dt>Source</dt>
+              <dd><a id="infoSource" href="#" target="_blank" rel="noreferrer">-</a></dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
