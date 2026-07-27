@@ -98,32 +98,11 @@ If SigLIP returns very weak scores, the app falls back to metadata search using 
 └── README.md
 ```
 
-## Deployment
-
-This is a static web app, so it can be deployed with GitHub Pages, Netlify, Vercel, or any static host.
-
-For GitHub Pages:
-
-1. Push the project to GitHub.
-2. Go to the repository settings.
-3. Open **Pages**.
-4. Set source to `Deploy from a branch`.
-5. Choose branch `main` and folder `/root`.
-6. Save and wait for GitHub to publish the site.
 
 ## Notes
 
 The `.ply` files were generated with SAM3D as Gaussian-splat reconstruction outputs, not ordinary mesh models. The app renders them with a Gaussian splat renderer rather than a standard mesh loader.
 
-If a `.ply` file is too large for GitHub, use Git LFS:
-
-```bash
-git lfs install
-git lfs track "*.ply"
-git add .gitattributes
-git add .
-git commit -m "Track PLY reconstructions with Git LFS"
-```
 
 ## Credits
 
