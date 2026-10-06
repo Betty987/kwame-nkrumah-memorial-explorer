@@ -1,4 +1,4 @@
-# Kwame Nkrumah Memorial Explorer
+# Kwame Nkrumah Memorial Explorer-ACVSS Hackathon
 
 An interactive 3D web explorer for reconstructed objects from the Kwame Nkrumah Memorial Museum. The `.ply` assets were reconstructed with SAM3D, then placed into one shared virtual memorial scene where visitors can click/tap objects for historical context and use open text queries to zoom to the closest matching item.
 
